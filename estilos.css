@@ -30,6 +30,7 @@ h1 {
 }
 
 h2 {
+    text-align: center;
     font-size: 1.8rem;
     color: rgb(50, 50, 150);
 }
@@ -43,7 +44,6 @@ h1::after {
     background-image: url("https://flagcdn.com/w20/cr.png");
     background-size: cover;
 }
-
 
 h2 + p {
     font-style: italic;
@@ -61,6 +61,7 @@ h2 + p {
 }
 
 /* Columna principal */
+
 #skills,
 #projects,
 #contact {
@@ -69,7 +70,14 @@ h2 + p {
     width: 70%;
 }
 
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 /* Barra lateral */
+
 aside {
     float: right;
     width: calc(30% - 10px);
@@ -86,15 +94,25 @@ aside {
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 15px;
+    flex: 1 1 250px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
 }
 
 .card p {
     color: gray;
+    opacity: 0.8;
 }
 
-nav a {
-    text-decoration: none;
-    margin: 10px;
+.card:hover {
+    transform: scale(1.05);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 
@@ -104,27 +122,38 @@ nav a {
 
 #hero {
     background-image: linear-gradient(to right, #667eea, #764ba2);
+    background-position: center;
     color: white;
-    min-height: 100vh;
+    min-height: 10vh;
 }
 
 #hero p {
     font-style: italic;
+    text-align: center;
 }
 
 #skills > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
     background-color: #eee;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
     list-style: none;
     padding: 0;
+    gap: 15px;
 }
 
 #contact {
     text-align: center;
     background-color: #222;
     color: white;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -152,7 +181,11 @@ li:last-child {
     color: blue;
 }
 
-/* Clearfix */
+
+/* =========================
+   UTILIDADES
+========================= */
+
 .clearfix {
     clear: both;
 }
